@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Instagram</string>
+
+    <!-- Login -->
+    <string name="et_user_hint">Username</string>
+    <string name="et_pass_hint">Password</string>
+    <string name="login_btn">Login</string>
+
+</resources>
