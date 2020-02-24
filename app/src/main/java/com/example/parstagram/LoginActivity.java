@@ -22,12 +22,14 @@ public class LoginActivity extends AppCompatActivity {
     EditText etPassword;
     Button btnLogin;
     ImageView ivAppTitle;
+    boolean alreadyLoggingIn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        alreadyLoggingIn = false;
         ivAppTitle = findViewById(R.id.ivAppTitle);
         ivAppTitle.setImageResource(R.drawable.nav_logo_whiteout);
         etUsername = findViewById(R.id.etUsername);
@@ -44,7 +46,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginUser(String user, String pass){
+        if (alreadyLoggingIn){
+            return;
+        }
+        alreadyLoggingIn = true;
         Log.i(TAG, "loginUser: Trying to log user in.");
+        Toast.makeText(this,"Logging in... please wait.", Toast.LENGTH_LONG);
+
+
         //Want this on teh background thread, not on the main thread or UI thread.
         //would prevent user from doing anything until the thread is done.
         ParseUser.logInInBackground(user, pass, new LogInCallback() {
@@ -59,9 +68,9 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 launchMainActivity();
-                // better user experience:
                 // Don't want the appearance of being logged out when pressing back
                 finish();
+                alreadyLoggingIn = false;
             }
         });
 

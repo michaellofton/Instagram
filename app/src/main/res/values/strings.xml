@@ -6,4 +6,8 @@
     <string name="et_pass_hint">Password</string>
     <string name="login_btn">Login</string>
 
+    <string name="post_take_pic">Take Picture</string>
+    <string name="post_submit">Submit</string>
+    <string name="post_description_hint">Description</string>
+
 </resources>

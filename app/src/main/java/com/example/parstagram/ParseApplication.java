@@ -2,12 +2,18 @@ package com.example.parstagram;
 
 import android.app.Application;
 
+import com.example.parstagram.models.Post;
 import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class ParseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Register your parse models
+        // If this isn't done before initialize, won't be able to query or set data on this model (Post)
+        ParseObject.registerSubclass(Post.class);
 
         // set applicationId, and server server based on the values in the Heroku settings.
         // clientKey is not needed unless explicitly configured
