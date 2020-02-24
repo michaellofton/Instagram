@@ -1,4 +1,4 @@
-package com.example.instagram;
+package com.example.parstagram;
 
 import android.content.Intent;
 import android.os.Bundle;
