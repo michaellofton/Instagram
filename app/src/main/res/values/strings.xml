@@ -9,5 +9,6 @@
     <string name="post_take_pic">Take Picture</string>
     <string name="post_submit">Submit</string>
     <string name="post_description_hint">Description</string>
+    <string name="post_logout">Logout</string>
 
 </resources>

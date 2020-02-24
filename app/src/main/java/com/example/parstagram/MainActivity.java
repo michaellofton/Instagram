@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+    private Button btnLogout;
     private File photoFile;
     public String photoFileName = "photo.jpg";
 
@@ -76,6 +77,18 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ParseUser user = ParseUser.getCurrentUser();
                 savePost(user, description, photoFile);
+            }
+        });
+
+        //User logout and redirect to login screen
+        btnLogout = findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut();
+                assert(ParseUser.getCurrentUser() == null);
+                launchLoginActivity();
+                finish();
             }
         });
 
@@ -126,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void launchLoginActivity(){
+        Intent gotoLogin = new Intent(this, LoginActivity.class);
+        startActivity(gotoLogin);
     }
 
 

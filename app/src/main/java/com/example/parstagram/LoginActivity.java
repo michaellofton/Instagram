@@ -29,6 +29,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //User Persistence - Skip login for user who's already signed in.
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            launchMainActivity();
+            finish();
+        }
+
         alreadyLoggingIn = false;
         ivAppTitle = findViewById(R.id.ivAppTitle);
         ivAppTitle.setImageResource(R.drawable.nav_logo_whiteout);
@@ -52,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         alreadyLoggingIn = true;
         Log.i(TAG, "loginUser: Trying to log user in.");
         Toast.makeText(this,"Logging in... please wait.", Toast.LENGTH_LONG);
-
 
         //Want this on teh background thread, not on the main thread or UI thread.
         //would prevent user from doing anything until the thread is done.
