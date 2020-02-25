@@ -7,4 +7,7 @@
     <!-- Image -->
     <dimen name="image_height">300dp</dimen>
     <dimen name="image_width">200dp</dimen>
+
+    <!-- RecyclerView Padding-->
+    <dimen name="layout_padding">8dp</dimen>
 </resources>
