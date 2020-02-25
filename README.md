@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 ### Video Walkthrough
 Here's a walkthrough of implemented user stories:
-![Walkthrough](walkthrough/part2/walkthrough.gif)<br>
+![Walkthrough](walkthrough/part2/WalkthroughPart2.gif)<br>
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ### Notes
@@ -69,7 +69,7 @@ The following **additional** features are implemented:
 
 ### Video Walkthrough
 Here's a walkthrough of implemented user stories:
-![Walkthrough](walkthrough/part1/walkthrough.gif)<br>
+![Walkthrough](walkthrough/part1/WalkthroughPart1.gif)<br>
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ### Notes
